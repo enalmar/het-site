@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Health Export Tool: everything in Apple Health, in one zip</title>
+<meta name="description" content="Health Export Tool puts everything in Apple Health into one zip on your iPhone: every workout as a FIT file, every other kind of data as plain spreadsheets. Move your training to another platform, or keep a complete copy before you change Apple ID. No account, no server.">
+<link rel="canonical" href="https://het.enalmar.uk/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://het.enalmar.uk/">
+<meta property="og:title" content="Health Export Tool: all of Apple Health, in one zip.">
+<meta property="og:description" content="Workouts as FIT files, everything else as spreadsheets, made on your iPhone. No account, no server, and it never writes to Health.">
+<meta property="og:image" content="https://het.enalmar.uk/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://het.enalmar.uk/assets/og.png">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0E0E11">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css">
+<!-- STAGED: Smart App Banner. On approval, uncomment and put the real numeric
+     Apple ID in place of APPSTORE_ID.
+<meta name="apple-itunes-app" content="app-id=APPSTORE_ID">
+-->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"Health Export Tool",
+  "applicationCategory":"HealthApplication",
+  "operatingSystem":"iOS 18.0 or later",
+  "description":"Exports everything in Apple Health into one zip on the iPhone: every workout as a FIT file, and every other kind of data as CSV files, one folder per kind. Never writes to Health.",
+  "url":"https://het.enalmar.uk/",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD",
+            "description":"Free to download. The newest 100 workouts and 100 days of health data are free; a single in-app purchase, Unlimited exports (US$4.99), removes the limit."}
+}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="./">
+        <img src="assets/icon-1024.png" alt="" width="32" height="32">
+        <span>HET</span>
+      </a>
+      <nav>
+        <a href="#zip">What's in the zip</a>
+        <a href="#how">How it works</a>
+        <a href="#price">Price</a>
+        <a href="privacy/">Privacy</a>
+      </nav>
+      <span class="soon-mini"><span class="dot" aria-hidden="true"></span>Coming soon</span>
+    </div>
+  </div>
+</header>
+
+<!-- ─────────────────────────────  Hero  ───────────────────────────────── -->
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy fade">
+        <h1>All of Apple Health, in one&nbsp;zip.</h1>
+        <p class="lede">Every workout as a FIT file, ready for another training platform. Every
+          other kind of data Health holds as plain spreadsheets. HET makes the zip on your
+          iPhone, and it goes only where you send it.</p>
+        <div class="cta-row">
+          <p class="soon">
+            <img src="assets/brands/app-store-badge.svg" alt="" width="162" height="54">
+            <span><span class="dot" aria-hidden="true"></span>Coming to the App Store</span>
+          </p>
+<!-- STAGED: App Store link.
+     On approval: delete the "Coming to the App Store" block directly above,
+     uncomment the block below, and replace APPSTORE_ID with the numeric Apple
+     ID from App Store Connect. Do the same for the copy under the price, and
+     for the Smart App Banner in <head>. Nothing else on the page changes.
+          <a class="store" href="https://apps.apple.com/app/health-export-tool/idAPPSTORE_ID">
+            <img src="assets/brands/app-store-badge.svg" alt="Download on the App Store" width="162" height="54"></a>
+-->
+          <p class="price-line">Newest 100 workouts and 100 days free.<br>Pay once after that.
+            Not a subscription.</p>
+        </div>
+      </div>
+
+      <div class="hero-devices fade" data-delay="1">
+        <figure class="device back">
+          <div class="screen"><img decoding="async" src="screenshots/files-zip.jpg" width="1020" height="2217"
+               alt="The Files app showing an unzipped HET export: the Health Data folder, the README and the Workouts folder."></div>
+        </figure>
+        <figure class="device front">
+          <div class="screen"><img decoding="async" fetchpriority="high" src="screenshots/het-home-dark.jpg" width="1020" height="2217"
+               alt="Health Export Tool's first screen in dark mode, counting the workouts, days of data and kinds of data Health holds, with the Export button."></div>
+        </figure>
+      </div>
+    </div>
+
+    <div class="sources fade" data-delay="2">
+      <p>Workouts as FIT files, which these import</p>
+      <ul class="logo-row" role="list">
+        <li><svg class="logo garmin" viewBox="0 0 24 6.508" role="img" aria-label="Garmin Connect"><use href="assets/brands/logos.svg#garmin"/></svg></li>
+        <li><svg class="logo strava" viewBox="0 0 17.074 24" role="img" aria-label="Strava"><use href="assets/brands/logos.svg#strava"/></svg></li>
+        <li class="word">Intervals.icu</li>
+        <li class="word">TrainingPeaks</li>
+        <li class="files">and anything else that reads FIT</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────  The zip  ───────────────────────────────
+     The names in the tree are the app's own: the folder names come from its
+     catalogue of Health data, the file names from its namer. Dates are
+     examples. -->
+<section id="zip" class="zip-section">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-lead">
+        <h2 class="reveal">One zip. Three things in it.</h2>
+        <p class="intro reveal" data-delay="1">Unzip it on a Mac, a PC or in the Files app and it
+          reads like any other folder. Nothing in it needs HET to open.</p>
+        <dl class="cases reveal" data-delay="2">
+          <div>
+            <dt><code>README.txt</code></dt>
+            <dd>What is in this export, and where to take the workouts next.</dd>
+          </div>
+          <div>
+            <dt><code>Workouts/</code></dt>
+            <dd>One FIT file per workout, with its route and heart rate. FIT is the format
+              Garmin Connect, Strava, Intervals.icu and TrainingPeaks import.</dd>
+          </div>
+          <div>
+            <dt><code>Health Data/</code></dt>
+            <dd>One folder for each kind of data, as plain CSV files that open in any
+              spreadsheet. Busy kinds such as heart rate are split by month. A
+              <code>readme.txt</code> in every folder explains every column, and
+              <code>manifest.json</code> lists the lot.</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="zipview reveal" data-delay="1" role="group"
+           aria-label="The layout of an export: README.txt, a Workouts folder of FIT files, and a Health Data folder with one folder per kind of data.">
+        <div class="zip-head"><span class="zip" aria-hidden="true"></span>HET Export 2026-11-08.zip</div>
+        <ul class="tree" role="list">
+          <li class="file"><span class="name">README.txt</span></li>
+          <li class="dir lit"><span class="name">Workouts</span>
+            <ul role="list">
+              <li class="file fit"><span class="name">2026-10-09_0712_running.fit</span></li>
+              <li class="file fit"><span class="name">2026-10-11_0830_cycling.fit</span></li>
+              <li class="file fit"><span class="name">2026-10-12_1815_swimming.fit</span></li>
+              <li class="more">one per workout</li>
+            </ul>
+          </li>
+          <li class="dir lit"><span class="name">Health Data</span>
+            <ul role="list">
+              <li class="file json"><span class="name">manifest.json</span></li>
+              <li class="dir"><span class="name">Heart Rate</span>
+                <ul role="list">
+                  <li class="file csv"><span class="name">heart_rate_2026-09.csv</span></li>
+                  <li class="file csv"><span class="name">heart_rate_2026-10.csv</span></li>
+                  <li class="file"><span class="name">readme.txt</span></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="kinds" role="list">
+              <li class="dir"><span class="name">Heart Rate Variability</span></li>
+              <li class="dir"><span class="name">Resting Heart Rate</span></li>
+              <li class="dir"><span class="name">Sleep</span></li>
+              <li class="dir"><span class="name">Steps</span></li>
+              <li class="dir"><span class="name">Weight</span></li>
+              <li class="dir"><span class="name">Blood Pressure</span></li>
+              <li class="dir"><span class="name">VO2 Max</span></li>
+              <li class="dir"><span class="name">Respiratory Rate</span></li>
+              <li class="dir"><span class="name">Oxygen Saturation</span></li>
+              <li class="dir"><span class="name">Hydration Log</span></li>
+              <li class="dir"><span class="name">Workout Routes</span></li>
+              <li class="dir"><span class="name">Workouts Summary</span></li>
+              <li class="more wide">and a folder for every other kind of data you have</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  The flow  ─────────────────────────────
+     A real sequence, so it is numbered. The track behind the numbers fills
+     once, left to right, when the row is reached: the page's one moment. -->
+<section id="how" class="flow-section">
+  <div class="wrap wide">
+    <h2 class="reveal">From Apple Health to anywhere, in four steps.</h2>
+    <p class="intro reveal" data-delay="1">The only choice that matters comes first: when iOS asks
+      how much history to share, choose All Recorded Data.</p>
+
+    <ol class="flow reveal" role="list">
+      <li class="stage">
+        <div class="visual">
+          <figure class="device sm">
+            <div class="screen"><img loading="lazy" decoding="async" src="screenshots/het-home.jpg" width="1020" height="2217"
+                 alt="Health Export Tool's first screen with the counts of workouts, days and kinds of data, and the Export button."></div>
+          </figure>
+        </div>
+        <div class="stage-text">
+          <span class="n">1</span>
+          <h3>Let HET read Health</h3>
+          <p>Allow access, and pick All Recorded Data when asked. HET counts what Health holds
+            and shows you before anything is exported.</p>
+        </div>
+      </li>
+
+      <li class="stage">
+        <div class="visual">
+          <figure class="device sm">
+            <div class="screen"><img loading="lazy" decoding="async" src="screenshots/het-share.jpg" width="1020" height="2217"
+                 alt="The iOS share sheet offering the finished HET Export zip, with Save to Files among the options."></div>
+          </figure>
+        </div>
+        <div class="stage-text">
+          <span class="n">2</span>
+          <h3>Export, then share the zip</h3>
+          <p>Press Export and keep HET open while it works. When it is done, save the zip to
+            Files, AirDrop it to your Mac, or send it wherever you keep things.</p>
+        </div>
+      </li>
+
+      <li class="stage">
+        <div class="visual">
+          <figure class="device sm">
+            <div class="screen"><img loading="lazy" decoding="async" src="screenshots/files-zip.jpg" width="1020" height="2217"
+                 alt="The Files app showing the unzipped export: the Health Data folder, the README and the Workouts folder."></div>
+          </figure>
+        </div>
+        <div class="stage-text">
+          <span class="n">3</span>
+          <h3>Unzip it</h3>
+          <p>A README, a folder of workouts and a folder of everything else. Open any of it in
+            Files, Numbers or Excel.</p>
+        </div>
+      </li>
+
+      <li class="stage">
+        <div class="visual">
+          <div class="browser" role="img" aria-label="A browser on a computer with an upload page: three FIT files from the Workouts folder, going to Garmin Connect, Strava, Intervals.icu or TrainingPeaks.">
+            <div class="browser-bar"><i></i><i></i><i></i><span>Upload activities</span></div>
+            <div class="browser-body">
+              <div class="drop">
+                <div class="drop-title">From Workouts/</div>
+                <div class="src"><span class="file-tile">FIT</span><span>2026-10-09_0712_running.fit</span></div>
+                <div class="src"><span class="file-tile">FIT</span><span>2026-10-11_0830_cycling.fit</span></div>
+                <div class="src"><span class="file-tile">FIT</span><span>2026-10-12_1815_swimming.fit</span></div>
+              </div>
+              <div class="dest"><span>Garmin Connect</span><span>Strava</span><span>Intervals.icu</span><span>TrainingPeaks</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="stage-text">
+          <span class="n">4</span>
+          <h3>Upload the workouts, or keep it all</h3>
+          <p>Upload the files in <strong>Workouts</strong> to the platform you are moving to. Or
+            put the whole zip somewhere safe, as a complete copy of your Health history.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  A closer look  ──────────────────────── -->
+<section class="closer">
+  <div class="wrap">
+    <h2 class="reveal">What happens inside HET.</h2>
+
+    <!-- On a wide screen with scripting on, one phone stays put while the
+         words scroll past it, and its screen follows the words. Without the
+         script, or on a phone, each step keeps its own framed capture. -->
+    <div class="story">
+    <div class="story-steps">
+
+    <div class="band reveal">
+      <figure class="device">
+        <div class="screen"><img loading="lazy" decoding="async" src="screenshots/het-included.jpg" width="1020" height="2217"
+             alt="The What's included list on HET's first screen, expanded to show each kind of Health data it found and the dates each one covers."></div>
+      </figure>
+      <div class="band-text">
+        <h3>It lists what it found, by name</h3>
+        <p>Open <strong>What's included</strong> and every kind of data HET can read from your
+          Health is there: heart rate, sleep, weight, blood pressure, steps and the rest. It
+          covers all 206 kinds iOS 27 offers apps, except clinical health records.</p>
+      </div>
+    </div>
+
+    <div class="band flip reveal">
+      <figure class="device">
+        <div class="screen"><img loading="lazy" decoding="async" src="screenshots/het-exporting.jpg" width="1020" height="2217"
+             alt="An export in progress in Health Export Tool: a progress bar for the kind of data being written, the time left, and a reminder to keep the app open."></div>
+      </figure>
+      <div class="band-text">
+        <h3>It builds the zip on your phone</h3>
+        <p>Workouts first, then every other kind of data, month by month. Nothing is uploaded
+          anywhere while it runs. Keep HET open until it finishes: Health cannot be read while
+          the phone is locked.</p>
+      </div>
+    </div>
+
+    <div class="band reveal">
+      <figure class="device">
+        <div class="screen"><img loading="lazy" decoding="async" src="screenshots/het-overlimit.jpg" width="1020" height="2217"
+             alt="The free allowance sheet in Health Export Tool, saying what is past the free 100 workouts and 100 days, with buttons to unlock or export the free part."></div>
+      </figure>
+      <div class="band-text">
+        <h3>It tells you before the free part runs out</h3>
+        <p>If an export reaches past the free 100 workouts and 100 days, HET says how much is
+          past it before it starts. Export the free part, newest first, or unlock the rest.
+          Never a surprise at the end.</p>
+      </div>
+    </div>
+
+    <div class="band flip reveal">
+      <figure class="device">
+        <div class="screen"><img loading="lazy" decoding="async" src="screenshots/het-done.jpg" width="1020" height="2217"
+             alt="A finished export in Health Export Tool, ready to share, with directions for uploading the Workouts folder to Garmin Connect, Intervals.icu, Strava and TrainingPeaks."></div>
+      </figure>
+      <div class="band-text">
+        <h3>Then it hands you the zip</h3>
+        <p>Share it to Files, AirDrop or anywhere the share sheet reaches. If something could
+          not be read, the finished screen lists it rather than leaving it out quietly.</p>
+      </div>
+    </div>
+    </div>
+    <div class="story-stage" aria-hidden="true">
+      <figure class="device">
+        <div class="screen"><img alt="" width="1020" height="2217"><img alt="" width="1020" height="2217"></div>
+      </figure>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  Two uses  ───────────────────────────── -->
+<section id="uses">
+  <div class="wrap">
+    <h2 class="reveal">Two reasons to take it all with you.</h2>
+    <p class="intro reveal" data-delay="1">One export serves both. The workouts are ready to
+      upload, and nothing about the rest has been thrown away.</p>
+
+    <div class="uses">
+      <article class="use reveal">
+        <p class="kicker">Moving platforms</p>
+        <h3>Take your workouts to another training app</h3>
+        <p>Every workout Health holds, whichever watch or app recorded it, each one a FIT file
+          with its route and heart rate. Batch-upload the <code>Workouts</code> folder and your
+          history arrives on the new platform.</p>
+        <div class="tiles" aria-label="Platforms that import FIT files">
+          <span><svg viewBox="0 0 24 6.508" aria-hidden="true"><use href="assets/brands/logos.svg#garmin"/></svg> Connect</span>
+          <span class="strava"><svg viewBox="0 0 17.074 24" aria-hidden="true"><use href="assets/brands/logos.svg#strava"/></svg> Strava</span>
+          <span>Intervals.icu</span>
+          <span>TrainingPeaks</span>
+        </div>
+        <p class="more"><a href="support/#upload">How to upload them &rsaquo;</a></p>
+      </article>
+
+      <article class="use reveal" data-delay="1">
+        <p class="kicker">Changing Apple ID</p>
+        <h3>Keep a complete copy before you switch</h3>
+        <p>Every row keeps Health's own record ID, the app and device that recorded it, and
+          everything else Health stored with it. Times are in UTC, units are named in every
+          column. The export keeps everything needed to restore it.</p>
+        <ul class="plain" role="list">
+          <li>Every kind of data your Health holds, not just workouts.</li>
+          <li>Plain files you can open without HET, today or years from now.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  Honest limits  ──────────────────────── -->
+<section class="limits-section">
+  <div class="wrap">
+    <h2 class="reveal">What it will not do, and why.</h2>
+    <p class="intro reveal" data-delay="1">Some are Apple's rules and some are choices made on
+      purpose. Worth knowing before you start.</p>
+    <ul class="limits reveal" data-delay="2" role="list">
+      <li><h3>Write to Health</h3>
+        <p>HET only reads. It never asks to write, so it cannot change, add to or delete
+          anything in your Health data.</p></li>
+      <li><h3>Read clinical health records</h3>
+        <p>Records from hospitals and clinics are left alone. HET never asks for Health
+          Records access.</p></li>
+      <li><h3>Export history you did not share</h3>
+        <p>iOS asks how much history to share. Choose <strong>Past 30 Days</strong> and only
+          30 days can be exported. Choose <strong>All Recorded Data</strong>.</p></li>
+      <li><h3>Read prescriptions without asking each time</h3>
+        <p>Apple shares vision prescriptions and medications one record at a time, through
+          its own picker. HET reads only the ones you choose there.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  Privacy + price  ────────────────────── -->
+<section class="pair">
+  <div class="wrap">
+    <div class="pair-grid">
+      <div class="panel reveal">
+        <h2>Nothing leaves your iPhone until you share it.</h2>
+        <p class="intro">There is no account to make and no server to send anything to. HET
+          reads Health, writes the zip on your phone, and hands it to you. The only thing it
+          ever asks the network is Apple's App Store, about the one-off unlock.</p>
+        <dl class="facts">
+          <div><dt>0</dt><dd>accounts to create</dd></div>
+          <div><dt>0</dt><dd>analytics or trackers</dd></div>
+          <div><dt>0</dt><dd>changes made to your Health data</dd></div>
+        </dl>
+        <p class="more"><a href="privacy/">Read the privacy policy &rsaquo;</a></p>
+      </div>
+
+      <div class="panel price reveal" data-delay="1" id="price">
+        <h2>100 free. Then pay once.</h2>
+        <p class="intro">Your newest <strong>100 workouts</strong> and <strong>100 days</strong>
+          of health data are free: enough to try it on your own data and check the result
+          before deciding. After that, <strong>Unlimited exports</strong> is a single purchase,
+          US$4.99, or what the App Store shows in your currency.</p>
+        <ul class="plain" role="list">
+          <li>The free allowance never resets. It is kept in your iPhone's Keychain, so
+            deleting and reinstalling HET does not change it.</li>
+          <li>Exporting something you have exported before never counts twice.</li>
+          <li>One payment, on your Apple Account. It does not renew and there is nothing to
+            cancel.</li>
+        </ul>
+        <p class="soon">
+          <img src="assets/brands/app-store-badge.svg" alt="" width="150" height="50">
+          <span><span class="dot" aria-hidden="true"></span>Coming to the App Store</span>
+        </p>
+<!-- STAGED: App Store link, as in the hero.
+        <a class="store" href="https://apps.apple.com/app/health-export-tool/idAPPSTORE_ID">
+          <img src="assets/brands/app-store-badge.svg" alt="Download on the App Store" width="150" height="50"></a>
+-->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  FAQ  ────────────────────────────────── -->
+<section>
+  <div class="wrap narrow">
+    <h2 class="reveal faq-title">Before you start</h2>
+
+    <details class="faq reveal"><summary>Does HET change anything in Health?</summary>
+      <p>No. It only reads. It never asks for permission to write, so nothing in Health can
+        be changed, added or deleted by it.</p></details>
+
+    <details class="faq reveal"><summary>Why does my export only go back 30 days?</summary>
+      <p>When HET first asked to read Health, iOS offered <strong>Past 30 Days</strong> or
+        <strong>All Recorded Data</strong>, and Past 30 Days was chosen. Change it in
+        <strong>Settings &rsaquo; Health &rsaquo; Data Access &amp; Devices &rsaquo; HET</strong>,
+        then export again. The <a href="support/">support page</a> has the details.</p></details>
+
+    <details class="faq reveal"><summary>What exactly is in the export?</summary>
+      <p>Everything Apple Health lets an app read: all 206 kinds of data iOS 27 offers, except
+        clinical health records. Workouts go in <code>Workouts</code> as FIT files, with routes
+        and heart rate. Everything else goes in <code>Health Data</code>, one folder per kind,
+        as CSV files with a readme explaining every column.</p></details>
+
+    <details class="faq reveal"><summary>Where can I upload the workouts?</summary>
+      <p>Anywhere that imports FIT files, which includes Garmin Connect, Strava, Intervals.icu
+        and TrainingPeaks. Each has its own upload page; the
+        <a href="support/#upload">support page</a> says where to find them.</p></details>
+
+    <details class="faq reveal"><summary>Is it a backup I could restore from?</summary>
+      <p>It keeps everything needed to restore it. Every row carries Health's own record ID,
+        the app and device that recorded it, and the rest of what Health stored with it, in
+        plain files you can read without HET.</p></details>
+
+    <details class="faq reveal"><summary>Where does the zip go?</summary>
+      <p>Only where you send it. HET writes it into its own temporary storage on your phone,
+        then hands it to the share sheet. HET deletes its copy the next time you export or open
+        the app, and iOS may clear it sooner.</p></details>
+
+    <details class="faq reveal"><summary>Can I open the health data without HET?</summary>
+      <p>Yes. They are plain CSV files, which Numbers, Excel and Google Sheets all open. All
+        times are in UTC, and each column header names its unit.</p></details>
+
+    <details class="faq reveal"><summary>Can I get my money back?</summary>
+      <p>Purchases go through Apple, so refunds do too. Apple's process is at
+        <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>.
+        The free allowance exists so you can see the export of your own data first.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <span>Health Export Tool</span>
+      <span class="spacer"></span>
+      <a href="privacy/">Privacy</a>
+      <a href="support/">Support</a>
+      <a href="#zip">What's in the zip</a>
+    </div>
+    <p class="legal">Apple, Apple Health, Apple Watch, iPhone and App Store are trademarks of
+      Apple Inc. Garmin, Garmin Connect, Strava, Intervals.icu and TrainingPeaks are trademarks
+      of their respective owners. This app is not affiliated with or endorsed by any of
+      them.</p>
+  </div>
+</footer>
+
+<script>
+// Sections lift into place as they are reached. Everything here is decoration:
+// the page is complete and readable with scripting off, and the observer is
+// skipped entirely for anyone who has asked for reduced motion.
+(function () {
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (calm.matches || !('IntersectionObserver' in window)) return;
+
+  // Opt into hiding only now that we know the observer exists and will run.
+  // The page must read correctly with this script never executing at all.
+  document.documentElement.classList.add('js-reveal');
+
+  var seen = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('in');
+      seen.unobserve(entry.target);   // once each; this is not a loop
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+
+  document.querySelectorAll('.reveal').forEach(function (el) { seen.observe(el); });
+
+  // Dead-man's switch, so a section can never be left invisible: if anything
+  // well inside the viewport is still hidden, the observer is not working.
+  var ticks = 0;
+  var audit = setInterval(function () {
+    var stuck = Array.prototype.some.call(
+      document.querySelectorAll('.reveal:not(.in)'),
+      function (el) {
+        var box = el.getBoundingClientRect();
+        return box.bottom > 0 && box.top < window.innerHeight * 0.5;
+      });
+    if (stuck) {
+      document.documentElement.classList.remove('js-reveal');
+      clearInterval(audit);
+    }
+    if (++ticks > 15) { clearInterval(audit); }
+  }, 900);
+})();
+
+// The pinned phone in "What happens inside HET". Each step already carries its
+// own capture; this only borrows the active one's src, so nothing is lost if
+// it never runs. The step nearest the middle of the screen is the active one.
+// A new capture fades in on top of the old, which stays fully opaque beneath
+// it until the fade is over, so a swap never dips to black.
+(function () {
+  var story = document.querySelector('.story');
+  var wide = window.matchMedia('(min-width: 900px)');
+  if (!story) return;
+  var layers = story.querySelectorAll('.story-stage img');
+  var steps = Array.prototype.slice.call(story.querySelectorAll('.story-steps .band'));
+  var front = 0, current = null, queued = false, settle;
+
+  function show(step) {
+    if (step === current) return;
+    current = step;
+    steps.forEach(function (s) { s.classList.toggle('active', s === step); });
+    var idx = 1 - front, next = layers[idx], prev = layers[front];
+    // Only the latest request may swap, and only once: a cached image can
+    // report complete and still fire its load event afterwards.
+    function reveal() {
+      next.onload = null;
+      if (current !== step) return;
+      clearTimeout(settle);
+      prev.classList.remove('top'); next.classList.add('top', 'on'); front = idx;
+      settle = setTimeout(function () { prev.classList.remove('on'); }, 260);
+    }
+    next.classList.remove('on', 'top');
+    next.onload = reveal;
+    next.src = step.querySelector('.screen img').getAttribute('src');
+    if (next.complete && next.naturalWidth) reveal();
+  }
+
+  function pick() {
+    queued = false;
+    var mid = window.innerHeight / 2, best = steps[0], gap = Infinity;
+    steps.forEach(function (s) {
+      var r = s.getBoundingClientRect(), d = Math.abs(r.top + r.height / 2 - mid);
+      if (d < gap) { gap = d; best = s; }
+    });
+    show(best);
+  }
+  function onScroll() { if (!queued) { queued = true; requestAnimationFrame(pick); } }
+
+  function mode() {
+    var on = wide.matches;
+    story.classList.toggle('story-on', on);
+    window[on ? 'addEventListener' : 'removeEventListener']('scroll', onScroll, { passive: true });
+    if (on) pick();
+  }
+  wide.addEventListener('change', mode);
+  mode();
+})();
+</script>
+
+</body>
+</html>

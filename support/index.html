@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Support · Health Export Tool</title>
+<meta name="description" content="Help with exporting Apple Health: making the zip, getting all your history rather than 30 days, and uploading the workouts to Garmin Connect, Strava or Intervals.icu.">
+<link rel="canonical" href="https://het.enalmar.uk/support/">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0E0E11">
+<link rel="icon" href="../assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../" style="color:inherit">
+        <img src="../assets/icon-1024.png" alt="" width="36" height="36">
+        <span>HET</span>
+      </a>
+      <nav><a href="../">Home</a><a href="../privacy/">Privacy</a></nav>
+    </div>
+  </div>
+</header>
+
+<section class="prose">
+  <div class="wrap narrow">
+    <p class="eyebrow">Support</p>
+    <h1 style="font-size:clamp(28px,4.4vw,40px);font-weight:700">Getting everything out, and where to put it</h1>
+    <p class="lead">How to make the export, the one setting that catches people out, and how
+      to upload the workouts elsewhere. If your question is not here, write and say what
+      happened.</p>
+
+    <h2>Making an export</h2>
+    <ol>
+      <li>Open HET and allow it to read Health. Turn on every kind of data you want in the
+        export.</li>
+      <li>When iOS asks how much history to share, choose <strong>All Recorded Data</strong>.
+        See below for why this matters.</li>
+      <li>HET counts your workouts, days of data and kinds of data. Open
+        <strong>What's included</strong> to see the list.</li>
+      <li>Press <strong>Export</strong> and keep HET open until it finishes. Health cannot be
+        read while the phone is locked.</li>
+      <li>Press <strong>Share zip</strong> and save it to Files, AirDrop it to a computer, or
+        send it wherever you keep things.</li>
+    </ol>
+
+    <h2>My export only goes back 30 days</h2>
+    <p>When HET first asks to read Health, iOS asks how much history to share:
+      <strong>Past 30 Days</strong> or <strong>All Recorded Data</strong>. If Past 30 Days was
+      chosen, Health gives HET only the last 30 days, and that is all that can be exported.</p>
+    <p>To change it, go to
+      <strong>Settings &rsaquo; Health &rsaquo; Data Access &amp; Devices &rsaquo; HET</strong>,
+      allow all recorded data, then export again.</p>
+
+    <h2>A kind of data is missing</h2>
+    <p>Health does not tell apps what was refused, so a missing kind usually means its access
+      is off. Turn it on in the same place,
+      <strong>Settings &rsaquo; Health &rsaquo; Data Access &amp; Devices &rsaquo; HET</strong>.</p>
+    <p>Two kinds are different by design. Clinical health records are never requested. Vision
+      prescriptions and medications are shared one record at a time through Apple's own picker:
+      HET's Help screen has a button that opens it.</p>
+
+    <h2 id="upload">Uploading your workouts to another platform</h2>
+    <p>Unzip the export first. Everything to upload is in the <code>Workouts</code> folder, one
+      FIT file per workout. Each platform has its own upload page and its own limits, and they
+      change from time to time, so take these as directions rather than exact steps.</p>
+    <h3>Garmin Connect</h3>
+    <p>On a computer, sign in to Garmin Connect on the web and look for <strong>Import
+      Data</strong>. Choose the FIT files from the <code>Workouts</code> folder.</p>
+    <h3>Strava</h3>
+    <p>On the Strava website, use <strong>Upload</strong> and choose files. You can select
+      several FIT files at once; for a long history, work through the folder in batches.</p>
+    <h3>Intervals.icu</h3>
+    <p>Intervals.icu accepts FIT file uploads on the web. Drop the files from the
+      <code>Workouts</code> folder onto its upload area.</p>
+    <h3>Anywhere else</h3>
+    <p>Most training platforms that import from a watch accept FIT files. The
+      <code>README.txt</code> at the top of the export repeats these directions.</p>
+
+    <h2>Opening the health data</h2>
+    <p>Everything outside <code>Workouts</code> is in <code>Health Data</code>, one folder per
+      kind of data, as CSV files. Numbers, Excel and Google Sheets all open them. Each folder has
+      a <code>readme.txt</code> explaining every column. Times are in UTC, and each column header
+      names its unit.</p>
+
+    <h2>I paid and the unlock has not appeared</h2>
+    <p>Open the unlock screen and press <strong>Restore purchase</strong>. Purchases are tied to
+      your Apple Account, so make sure you are signed in with the same one you bought with.</p>
+    <p>Refunds are handled by Apple, at
+      <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>.</p>
+
+    <h2>Still stuck</h2>
+    <p>Write to <a href="mailto:support@enalmar.uk">support@enalmar.uk</a> and say what you
+      did, what you expected, and what happened instead. If HET showed a message or a number,
+      it helps to include it. Please do not attach your export: it is your health data, and it
+      is not needed.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <span>Health Export Tool</span>
+      <span class="spacer"></span>
+      <a href="../">Home</a>
+      <a href="../privacy/">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

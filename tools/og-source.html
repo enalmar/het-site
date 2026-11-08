@@ -1,0 +1,58 @@
+<!-- Source for assets/og.png, the social sharing card. Not part of the site.
+     It draws the zip's layout rather than a screenshot, so it does not depend
+     on the captures. Regenerate after a redesign:
+       python3 -m http.server 8765
+       "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
+         --screenshot=assets/og.png --window-size=1200,630 \
+         --force-device-scale-factor=1 --virtual-time-budget=3000 \
+         --hide-scrollbars http://localhost:8765/tools/og-source.html -->
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+body::before{background:radial-gradient(900px 700px at 50% -10%,rgba(74,222,128,.24),rgba(74,222,128,.06) 45%,transparent 72%)}
+.og{position:relative;z-index:1;height:630px;display:grid;grid-template-columns:1.1fr .9fr;
+    align-items:center;gap:48px;padding:0 72px}
+.og h1{font-size:62px;font-weight:700;letter-spacing:-.035em;line-height:1.04;max-width:12ch;text-wrap:balance}
+.og p{margin-top:22px;font-size:24px;color:var(--text-2);max-width:25ch;line-height:1.4}
+.og .mark{display:flex;align-items:center;gap:16px;margin-bottom:30px}
+.og .mark img{width:52px;height:52px;border-radius:13px}
+.og .mark span{font-size:22px;font-weight:700;letter-spacing:.22em}
+.og .zipview{font-size:17px;padding:26px 28px;box-shadow:0 30px 90px rgba(0,0,0,.6);
+    transform:rotate(-1.5deg)}
+.og .tree li{padding:4px 0}
+.og .tree ul > li::before{top:17px}
+</style></head><body>
+<div class="og">
+  <div>
+    <div class="mark">
+      <img src="../assets/icon-1024.png" alt="">
+      <span>HET</span>
+    </div>
+    <h1>All of Apple Health, in one zip.</h1>
+    <p>Workouts as FIT files, everything else as spreadsheets. No account, no server.</p>
+  </div>
+  <div class="zipview">
+    <div class="zip-head"><span class="zip"></span>HET Export.zip</div>
+    <ul class="tree">
+      <li class="file"><span class="name">README.txt</span></li>
+      <li class="dir lit"><span class="name">Workouts</span>
+        <ul>
+          <li class="file fit"><span class="name">2026-10-09_0712_running.fit</span></li>
+          <li class="file fit"><span class="name">2026-10-11_0830_cycling.fit</span></li>
+        </ul>
+      </li>
+      <li class="dir lit"><span class="name">Health Data</span>
+        <ul>
+          <li class="dir"><span class="name">Heart Rate</span></li>
+          <li class="dir"><span class="name">Heart Rate Variability</span></li>
+          <li class="dir"><span class="name">Sleep</span></li>
+          <li class="dir"><span class="name">Steps</span></li>
+          <li class="dir"><span class="name">Weight</span></li>
+          <li class="more">and every other kind of data</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</body></html>
