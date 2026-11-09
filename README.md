@@ -24,31 +24,24 @@ python3 -m http.server 8765
 | `tools/og-source.html` | Source for the social card, `assets/og.png`. Not served as a page |
 | `tools/make-screenshots.sh` | Turns the native captures into the JPEGs in `screenshots/` |
 
-## Before this goes live
+## Going live (done)
 
-1. **DNS.** `CNAME` says `het.enalmar.uk`, and every canonical URL, the
-   sitemap, `robots.txt` and the 404 page's links assume it. It will not serve
-   until `het.enalmar.uk` has a DNS **CNAME record pointing at
-   `enalmar.github.io`**, and the repository's Pages settings have the custom
-   domain and HTTPS turned on.
-2. **The App Store link** is written out and commented in `index.html`, next to
-   each "Coming to the App Store" badge (the hero and the price panel), with a
-   Smart App Banner staged in `<head>`. On approval, delete each "Coming to the
-   App Store" block, uncomment the link beneath it, and replace `APPSTORE_ID`
-   with the real numeric Apple ID from App Store Connect. Add an `installUrl`
-   to the structured data at the same time. Nothing else on the page changes.
-3. **The price.** The page says **US$4.99**, the base price, "or what the App
-   Store shows in your currency". No £ price is stated because none exists yet
-   in App Store Connect. Once Apple has derived it, the HIT site's pattern
-   (£4.99 in the price heading and the hero) can follow, and the structured
-   data's `priceCurrency` can move to GBP.
+1. **DNS** is live: GoDaddy has `het CNAME enalmar.github.io`, Pages has the
+   custom domain, and HTTPS is enforced (certificate approved 8 Nov 2026).
+2. **The App Store link** is live since approval on 9 Nov 2026: the nav badge,
+   the hero and the price panel link to
+   `https://apps.apple.com/gb/app/health-export-tool/id6832320729`, the Smart App
+   Banner carries `app-id=6832320729`, and the structured data has `installUrl`.
+3. **The price** is £4.99 (US$4.99), the purchase's base price in the UK as
+   set in App Store Connect, matching HIT. The structured data's
+   `priceCurrency` is GBP.
 
 The support address is already `support@enalmar.uk` on both prose pages.
 
 ## Where it serves
 
-`https://het.enalmar.uk/`, from `main` at the repository root, once the DNS
-above is in place. No GitHub repository has been created for it yet.
+`https://het.enalmar.uk/`, from `main` at the root of
+[enalmar/het-site](https://github.com/enalmar/het-site), served by GitHub Pages.
 
 ## About the screenshots
 

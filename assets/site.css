@@ -65,7 +65,11 @@ header.site{position:sticky;top:0;z-index:var(--z-header);
   border:1px solid var(--line-2);border-radius:999px;background:var(--card);
   font-size:13px;font-weight:600;color:var(--text);white-space:nowrap}
 .soon-mini .dot,.soon .dot{width:7px;height:7px;border-radius:50%;background:var(--signal);flex:none}
-@media(max-width:820px){.bar nav{display:none}.soon-mini{margin-left:auto}}
+@media(max-width:820px){.bar nav{display:none}.soon-mini,.store-mini{margin-left:auto}}
+.store-mini{display:block;border-radius:8px}
+.store-mini img{height:36px;width:auto}
+.store-mini:hover{text-decoration:none}
+.store-mini:focus-visible{outline:2px solid var(--text);outline-offset:3px}
 
 /* ───────────────────────────── Devices ──────────────────────────── */
 /* Every screen capture on the site sits in this frame, exactly as on the HIT
